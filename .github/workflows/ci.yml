@@ -1,0 +1,12 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - run: ruby -Ilib -e "require 'flux-constraint'; puts 'Flux::PASS=' + Flux::PASS.to_s; c = Flux::ConstraintChecker.new([Flux::ConstraintRule.new('t', 0, 100, 50, 80, 95)]); puts c.check(42).passed ? 'PASS' : 'FAIL'"
