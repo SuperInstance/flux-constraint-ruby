@@ -2,6 +2,8 @@
 
 INT8 constraint checking with severity thresholds. Pure Ruby, no dependencies.
 
+> ⚠️ **Standalone sub-library** — Flux Constraint Engine provides a focused constraint-checking API. For the full FLUX ISA v3.0 VM with assembler, disassembler, and runtime metaprogramming, see [`superinstance-flux-runtime`](https://github.com/SuperInstance/superinstance-flux-runtime-ruby).
+
 ## Install
 
 ```bash
